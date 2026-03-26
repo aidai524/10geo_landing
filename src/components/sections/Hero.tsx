@@ -4,7 +4,8 @@ import { ArrowRight, Sparkles } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-24 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="relative pt-32 pb-24 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden min-h-[80vh]">
+      <div className="flex flex-col items-center">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -58,6 +59,7 @@ export function Hero() {
         <span>可量化增长</span>
         <span>品牌数字资产归属</span>
       </motion.div>
+      </div>
     </section>
   )
 }
