@@ -6,8 +6,8 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/80 dark:bg-zinc-950/80 border-b border-zinc-200/50 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 flex items-center">
-            <span className="text-xl font-bold tracking-tighter text-zinc-950 dark:text-white">十橙智能</span>
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <img src="/logo.png" alt="十橙智能" className="h-8 w-auto dark:invert dark:brightness-90" />
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">

@@ -10,6 +10,7 @@ export function Footer() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-white mb-8">
             看看你的品牌，是否已经进入 AI 的推荐名单
           </h2>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="w-full sm:w-auto text-base">获取品牌 AI 可见度快检</Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto text-base">预约顾问咨询</Button>
@@ -56,7 +57,8 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-200/50 dark:border-white/5">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
+          <div className="flex items-center gap-3 mb-4 md:mb-0">
+            <img src="/logo.png" alt="十橙智能" className="h-6 w-auto dark:invert dark:brightness-90" />
             <span className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-white">十橙智能</span>
             <span className="text-zinc-500 text-sm ml-4">© 2026 南京十橙智能科技有限公司</span>
           </div>
