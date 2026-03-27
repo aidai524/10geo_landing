@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
 import { Button } from "@/src/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
-import { Galaxy } from "@/src/components/backgrounds/Galaxy"
+import { Aurora } from "@/src/components/backgrounds/Aurora"
 import { useTheme } from "@/src/components/ThemeProvider"
 import { useEffect, useState } from "react"
 
@@ -18,41 +18,30 @@ export function Hero() {
     }
   }, [theme])
 
-  const galaxyConfig = isDark
+  const auroraConfig = isDark
     ? {
-        hueShift: 200,
-        starSpeed: 0.5,
-        density: 0.8,
-        glowIntensity: 0.4,
-        twinkleIntensity: 0.4,
-        saturation: 0.0,
-        transparent: true,
+        colorStops: ['#3b82f6', '#60a5fa', '#93c5cf'],
+        speed: 1.0,
+        amplitude: 1.0,
+        blend: 0.5,
       }
     : {
-        hueShift: 220,
-        starSpeed: 0.3,
-        density: 0.6,
-        glowIntensity: 0.6,
-        twinkleIntensity: 0.3,
-        saturation: 0.5,
-        transparent: false,
+        colorStops: ['#f97316', '#fdba74', '#fb923c'],
+        speed: 0.8,
+        amplitude: 1.2,
+        blend: 0.3,
       }
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {!isDark && (
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-100 to-slate-200" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-slate-100" />
       )}
-      <Galaxy
-        hueShift={galaxyConfig.hueShift}
-        starSpeed={galaxyConfig.starSpeed}
-        density={galaxyConfig.density}
-        glowIntensity={galaxyConfig.glowIntensity}
-        twinkleIntensity={galaxyConfig.twinkleIntensity}
-        saturation={galaxyConfig.saturation}
-        rotationSpeed={0.03}
-        mouseRepulsion={true}
-        transparent={galaxyConfig.transparent}
+      <Aurora
+        colorStops={auroraConfig.colorStops}
+        speed={auroraConfig.speed}
+        amplitude={auroraConfig.amplitude}
+        blend={auroraConfig.blend}
       />
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.div
