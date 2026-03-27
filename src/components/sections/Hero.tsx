@@ -1,17 +1,20 @@
 import { motion } from "motion/react"
 import { Button } from "@/src/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
-import { DotGrid } from "@/src/components/backgrounds/DotGrid"
+import { Galaxy } from "@/src/components/backgrounds/Galaxy"
 
 export function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-      <DotGrid
-        dotSize={4}
-        gap={28}
-        baseColor="#3b82f6"
-        activeColor="#60a5fa"
-        proximity={140}
+      <Galaxy
+        hueShift={200}
+        starSpeed={0.5}
+        density={0.8}
+        glowIntensity={0.4}
+        twinkleIntensity={0.4}
+        rotationSpeed={0.03}
+        mouseRepulsion={true}
+        transparent={true}
       />
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.div
