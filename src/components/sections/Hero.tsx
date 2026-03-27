@@ -1,11 +1,19 @@
 import { motion } from "motion/react"
 import { Button } from "@/src/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { DotGrid } from "@/src/components/backgrounds/DotGrid"
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-24 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden min-h-[80vh]">
-      <div className="flex flex-col items-center">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      <DotGrid
+        dotSize={4}
+        gap={28}
+        baseColor="#3b82f6"
+        activeColor="#60a5fa"
+        proximity={140}
+      />
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
