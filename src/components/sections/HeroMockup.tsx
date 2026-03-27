@@ -13,7 +13,7 @@ const data = [
 
 export function HeroMockup() {
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+    <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
       <div className="absolute inset-0 blur-[120px] bg-orange-500/10 rounded-full -z-10 transform translate-y-1/4 scale-150" />
       
       <motion.div

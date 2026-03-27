@@ -26,10 +26,10 @@ export function Hero() {
         blend: 0.5,
       }
     : {
-        colorStops: ['#f97316', '#fdba74', '#fb923c'],
-        speed: 0.8,
-        amplitude: 1.2,
-        blend: 0.3,
+        colorStops: ["#7cff67","#B19EEF","#5227FF"],
+        speed: 1.0,
+        amplitude: 1.0,
+        blend: 0.5,
       }
 
   return (
@@ -37,12 +37,14 @@ export function Hero() {
       {!isDark && (
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-slate-100" />
       )}
-      <Aurora
-        colorStops={auroraConfig.colorStops}
-        speed={auroraConfig.speed}
-        amplitude={auroraConfig.amplitude}
-        blend={auroraConfig.blend}
-      />
+      <div className="absolute inset-0 z-0 opacity-50 dark:opacity-30">
+        <Aurora
+          colorStops={auroraConfig.colorStops}
+          speed={auroraConfig.speed}
+          amplitude={auroraConfig.amplitude}
+          blend={auroraConfig.blend}
+        />
+      </div>
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
