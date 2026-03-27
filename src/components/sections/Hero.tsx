@@ -2,19 +2,57 @@ import { motion } from "motion/react"
 import { Button } from "@/src/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Galaxy } from "@/src/components/backgrounds/Galaxy"
+import { useTheme } from "@/src/components/ThemeProvider"
+import { useEffect, useState } from "react"
 
 export function Hero() {
+  const { theme } = useTheme()
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    if (theme === "system") {
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      setIsDark(systemDark)
+    } else {
+      setIsDark(theme === "dark")
+    }
+  }, [theme])
+
+  const galaxyConfig = isDark
+    ? {
+        hueShift: 200,
+        starSpeed: 0.5,
+        density: 0.8,
+        glowIntensity: 0.4,
+        twinkleIntensity: 0.4,
+        saturation: 0.0,
+        transparent: true,
+      }
+    : {
+        hueShift: 220,
+        starSpeed: 0.3,
+        density: 0.6,
+        glowIntensity: 0.6,
+        twinkleIntensity: 0.3,
+        saturation: 0.5,
+        transparent: false,
+      }
+
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {!isDark && (
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100 to-slate-200" />
+      )}
       <Galaxy
-        hueShift={200}
-        starSpeed={0.5}
-        density={0.8}
-        glowIntensity={0.4}
-        twinkleIntensity={0.4}
+        hueShift={galaxyConfig.hueShift}
+        starSpeed={galaxyConfig.starSpeed}
+        density={galaxyConfig.density}
+        glowIntensity={galaxyConfig.glowIntensity}
+        twinkleIntensity={galaxyConfig.twinkleIntensity}
+        saturation={galaxyConfig.saturation}
         rotationSpeed={0.03}
         mouseRepulsion={true}
-        transparent={true}
+        transparent={galaxyConfig.transparent}
       />
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
       <motion.div
